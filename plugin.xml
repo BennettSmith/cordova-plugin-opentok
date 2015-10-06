@@ -43,7 +43,7 @@
 
     <!-- ios -->
     <platform name="ios">
-      <hook type="before_plugin_install" src="scripts/downloadiOSSDK.js" />
+      <hook type="before_plugin_install" src="scripts/ios/iosBeforePluginInstall.js" />
 
       <header-file src="src/ios/OpenTokPlugin.h" />
       <source-file src="src/ios/OpenTokPlugin.m" />
