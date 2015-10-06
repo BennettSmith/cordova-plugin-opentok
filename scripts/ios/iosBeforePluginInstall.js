@@ -17,7 +17,7 @@ module.exports = function(context) {
 
   execSync('cd ' + pluginDir + '/src/ios; curl --silent ' + url + ' --output ' + tarball);
   execSync('cd ' + pluginDir + '/src/ios; if [ -d ' + dirname + ' ]; then rm -rf ' + dirname + '; fi');
-  execSync('cd ' + pluginDir + '/src/ios; tar -zxvf ' + tarball);
+  execSync('cd ' + pluginDir + '/src/ios; tar -zxf ' + tarball);
   execSync('cd ' + pluginDir + '/src/ios; mv ' + dirname + '/OpenTok.framework .');
   execSync('cd ' + pluginDir + '/src/ios; if [ -d ' + dirname + ' ]; then rm -rf ' + dirname + '; fi');
 }
