@@ -4,7 +4,8 @@
 // Only runs when installing a plugin on iOS.  No need to specifically
 // check for the iOS platform in the code below.
 
-var dirname = 'OpenTok-iOS-2.6.0'
+var frameworkname = 'OpenTok.framework';
+var dirname = 'OpenTok-iOS-2.6.0';
 var tarball = dirname + '.tar.bz2';
 var url = 'https://s3.amazonaws.com/artifact.tokbox.com/rel/ios-sdk/' + tarball;
 var pluginDir, childProcess, execSync;
@@ -17,7 +18,8 @@ module.exports = function(context) {
 
   execSync('cd ' + pluginDir + '/src/ios; curl --silent ' + url + ' --output ' + tarball);
   execSync('cd ' + pluginDir + '/src/ios; if [ -d ' + dirname + ' ]; then rm -rf ' + dirname + '; fi');
+  execSync('cd ' + pluginDir + '/src/ios; if [ -d ' + frameworkname + ' ]; then rm -rf ' + frameworkname + '; fi');
   execSync('cd ' + pluginDir + '/src/ios; tar -zxf ' + tarball);
-  execSync('cd ' + pluginDir + '/src/ios; mv ' + dirname + '/OpenTok.framework .');
+  execSync('cd ' + pluginDir + '/src/ios; mv ' + dirname + '/' + frameworkname + ' ./' + frameworkname);
   execSync('cd ' + pluginDir + '/src/ios; if [ -d ' + dirname + ' ]; then rm -rf ' + dirname + '; fi');
 }
