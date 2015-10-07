@@ -65,7 +65,7 @@
       <framework src="libz.dylib" />
       <framework src="libsqlite3.dylib" />
       <framework src="libxml2.dylib" />
-      <framework src="VideoToolkit.framework" />
+      <framework src="VideoToolbox.framework" />
       <framework src="GLKit.framework" />
 
       <!-- Adopts project's config.xml to include the OpenTokPlugin and domain whitelists -->
